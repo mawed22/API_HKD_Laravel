@@ -1,0 +1,482 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API HKDigitals",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/posts": {
+            "get": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Get List Post",
+                "operationId": "d852dbfabce2a65704c28f73a30ce29c",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "rows": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "_id": {
+                                                        "type": "number",
+                                                        "example": "1"
+                                                    },
+                                                    "title": {
+                                                        "type": "string",
+                                                        "example": "example title"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "example": "example description"
+                                                    },
+                                                    "slug": {
+                                                        "type": "string",
+                                                        "example": "example slug"
+                                                    },
+                                                    "status": {
+                                                        "type": "string",
+                                                        "example": "example status"
+                                                    },
+                                                    "visibility": {
+                                                        "type": "string",
+                                                        "example": "example visibility"
+                                                    },
+                                                    "publicationDate": {
+                                                        "type": "string",
+                                                        "example": "example publicationDate"
+                                                    },
+                                                    "image": {
+                                                        "type": "string",
+                                                        "example": "example image"
+                                                    },
+                                                    "extract": {
+                                                        "type": "string",
+                                                        "example": "example extract"
+                                                    },
+                                                    "author": {
+                                                        "type": "string",
+                                                        "example": "example author"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "example": "2022-08-11T09:25:53.000000Z"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "example": "2022-08-11T09:25:53.000000Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/posts/{slug}": {
+            "get": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Get Detail Post",
+                "operationId": "0468f191634546b42796c59751e8dad4",
+                "parameters": [
+                    {
+                        "name": "slug",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "example": "title"
+                                        },
+                                        "description": {
+                                            "type": "string",
+                                            "example": "description"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "status"
+                                        },
+                                        "slug": {
+                                            "type": "string",
+                                            "example": "slug"
+                                        },
+                                        "visibility": {
+                                            "type": "string",
+                                            "example": "visibility"
+                                        },
+                                        "publicationDate": {
+                                            "type": "string",
+                                            "example": "publicationDate"
+                                        },
+                                        "image": {
+                                            "type": "string",
+                                            "example": "image"
+                                        },
+                                        "extract": {
+                                            "type": "string",
+                                            "example": "extract"
+                                        },
+                                        "author": {
+                                            "type": "string",
+                                            "example": "author"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2022-O8-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2022-O8-11T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/posts/add": {
+            "post": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Create Post",
+                "operationId": "4b3c6f5258ae858cf43f2a6ce8a3ff2a",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            },
+                                            "slug": {
+                                                "type": "string"
+                                            },
+                                            "status": {
+                                                "type": "string"
+                                            },
+                                            "visibility": {
+                                                "type": "string"
+                                            },
+                                            "publicationDate": {
+                                                "type": "string"
+                                            },
+                                            "image": {
+                                                "type": "string"
+                                            },
+                                            "extract": {
+                                                "type": "string"
+                                            },
+                                            "author": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "title": "example title",
+                                    "description": "example description",
+                                    "slug": "example slug",
+                                    "statut": "example statut",
+                                    "visibility": "example visibility",
+                                    "publicationDate": "example publicationDate",
+                                    "image": "example image",
+                                    "extract": "example extract",
+                                    "author": "example author"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "example": "title"
+                                        },
+                                        "description": {
+                                            "type": "string",
+                                            "example": "description"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "status"
+                                        },
+                                        "slug": {
+                                            "type": "string",
+                                            "example": "slug"
+                                        },
+                                        "visibility": {
+                                            "type": "string",
+                                            "example": "visibility"
+                                        },
+                                        "publicationDate": {
+                                            "type": "string",
+                                            "example": "publicationDate"
+                                        },
+                                        "image": {
+                                            "type": "string",
+                                            "example": "image"
+                                        },
+                                        "extract": {
+                                            "type": "string",
+                                            "example": "extract"
+                                        },
+                                        "author": {
+                                            "type": "string",
+                                            "example": "author"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2022-O8-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2022-O8-11T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "fail"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/posts/update/{slug}": {
+            "put": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Update Post",
+                "operationId": "0298caa98747a881d9cdc83424296cf0",
+                "parameters": [
+                    {
+                        "name": "slug",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            },
+                                            "slug": {
+                                                "type": "string"
+                                            },
+                                            "status": {
+                                                "type": "string"
+                                            },
+                                            "visibility": {
+                                                "type": "string"
+                                            },
+                                            "publicationDate": {
+                                                "type": "string"
+                                            },
+                                            "image": {
+                                                "type": "string"
+                                            },
+                                            "extract": {
+                                                "type": "string"
+                                            },
+                                            "author": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "title": "example title",
+                                    "description": "example description",
+                                    "slug": "example slug",
+                                    "statut": "example statut",
+                                    "visibility": "example visibility",
+                                    "publicationDate": "example publicationDate",
+                                    "image": "example image",
+                                    "extract": "example extract",
+                                    "author": "example author"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "example": "title"
+                                        },
+                                        "description": {
+                                            "type": "string",
+                                            "example": "description"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "status"
+                                        },
+                                        "slug": {
+                                            "type": "string",
+                                            "example": "slug"
+                                        },
+                                        "visibility": {
+                                            "type": "string",
+                                            "example": "visibility"
+                                        },
+                                        "publicationDate": {
+                                            "type": "string",
+                                            "example": "publicationDate"
+                                        },
+                                        "image": {
+                                            "type": "string",
+                                            "example": "image"
+                                        },
+                                        "extract": {
+                                            "type": "string",
+                                            "example": "extract"
+                                        },
+                                        "author": {
+                                            "type": "string",
+                                            "example": "author"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2022-O8-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2022-O8-11T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/posts/delete/{slug}": {
+            "delete": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Delete Post",
+                "operationId": "091f50d75af5556304eb0d26a700ef93",
+                "parameters": [
+                    {
+                        "name": "slug",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "delete post success"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

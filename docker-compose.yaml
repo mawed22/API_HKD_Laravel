@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  api_hkd:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: 'php artisan serve --host=0.0.0.0'
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - api_hkd_db
+
+  api_hkd_queue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: 'php artisan queue:work'
+    depends_on:
+      - api_hkd_db
+
+  api_hkd_db:
+    image: mysql:5.7.26
+    environment:
+      MYSQL_DATABASE: test_hkd
+      MYSQL_USER: mawed
+      MYSQL_PASSWORD: mawed
+      MYSQL_ROOT_PASSWORD: mawed
+    volumes:
+       - ./storage/dbdata:/var/lib/mysql
+    ports:
+      - 33063:3306
